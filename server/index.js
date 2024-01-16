@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(express.json());
-const port = 5000;
+const port = 8000;
 
 app.use(cors("*"));
 var connection = mysql.createConnection({
@@ -74,14 +74,27 @@ app.get('/api/count', (req,res) => {
 
 app.get('/api/search', (req, res) => {
     const searchQuery = req.query.search;
-    console.log(searchQuery);
+    
+    console.log("searchQuery",searchQuery);
     if(searchQuery){
     let sql = `SELECT * FROM OEM_Specs JOIN Marketplace_Inventory ON (OEM_Specs.car_id = Marketplace_Inventory.car_id) WHERE model_name = "${searchQuery}"`;
     console.log(sql);
     connection.query(sql, (error, results, fields) => {
         if(error){
             console.log(error);
-            res.status(500).send(error,message);
+            res.status(500).send(error);
+            return;
+        }
+        res.send(results);
+    });
+    }
+    else{
+        let sql = `SELECT * FROM OEM_Specs JOIN Marketplace_Inventory ON (OEM_Specs.car_id = Marketplace_Inventory.car_id)`;
+    console.log(sql);
+    connection.query(sql, (error, results, fields) => {
+        if(error){
+            console.log(error);
+            res.status(500).send(error);
             return;
         }
         res.send(results);
