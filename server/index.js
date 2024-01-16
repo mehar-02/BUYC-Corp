@@ -24,6 +24,7 @@ connection.connect(function(error){
     }
 });
 
+app.get('/', (req, res) => res.send("HEllo"));
 app.get('/api/data', (req, res) => {
     var colors=req.query.color;
     const order=req.query.order;
