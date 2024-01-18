@@ -2,7 +2,7 @@ import React, {useState,useEffect} from "react";
 import Card from "./card.jsx";
 import axios from 'axios';
 import Navbar from "./navBar.jsx";
-import Crousel from "./crousel.jsx";
+// import Crousel from "./crousel.jsx";
 function Main() {
   const [cars, setCars] = useState([]);
   const [color, setColor] = useState("All");
@@ -100,8 +100,6 @@ useEffect(() => {
   return (
     <div>
       <Navbar onColorSelect={handleColorSelect} onPriceSelect={handlePriceSelect} onMileageSelect={handleMileageSelect} onSearch={handleSearch} />
-      <Crousel />
-
     <div className="album py-5 bg-body-tertiary">
       <div className="container">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
