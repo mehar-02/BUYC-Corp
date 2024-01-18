@@ -95,7 +95,7 @@ useEffect(() => {
    console.log("cars", cars)
 
     const inventory= cars.map((car) => 
-      <Card id={car.car_id} name={car.model_name} price={car.list_price} color={car.color} mileage={car.mileage} />
+      <Card id={car.car_id} name={car.model_name} price={car.list_price} color={car.color} mileage={car.mileage} img={car.img} />
     );
   return (
     <div>
@@ -104,7 +104,7 @@ useEffect(() => {
       <div className="container">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {cars.map((car) => 
-      <Card id={car.car_id} name={car.model_name} price={car.list_price} color={car.color} mileage={car.mileage} />
+      <Card id={car.car_id} name={car.model_name} price={car.list_price} color={car.color} mileage={car.mileage} img={car.img} />
     )}
         </div>
       </div>
