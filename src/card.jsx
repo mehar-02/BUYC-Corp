@@ -4,7 +4,8 @@ function Card(props){
   return(
     <div className="col">
       <div className="card shadow-sm">
-        <img src = "https://imgd.aeplcdn.com/664x374/n/cw/ec/9733/city-2011-2014-exterior-right-front-three-quarter-2.jpeg?q=80" alt="car" />
+{/*         <img src = "https://imgd.aeplcdn.com/664x374/n/cw/ec/9733/city-2011-2014-exterior-right-front-three-quarter-2.jpeg?q=80" alt="car" /> */}
+        <img src = {props.img} alt="car" height="233.4" />
         <div className="card-body">
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
