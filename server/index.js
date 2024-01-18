@@ -96,7 +96,7 @@ app.get('/api/search', (req, res) => {
         
     console.log("searchQuery",searchQuery);
     if(searchQuery){
-    let sql = `SELECT * FROM OEM_Specs JOIN Marketplace_Inventory ON (OEM_Specs.car_id = Marketplace_Inventory.car_id) model_name LIKE "%${searchQuery}%"`;
+    let sql = `SELECT * FROM OEM_Specs JOIN Marketplace_Inventory ON (OEM_Specs.car_id = Marketplace_Inventory.car_id) WHERE model_name LIKE "%${searchQuery}%"`;
     console.log(sql);
     connection.query(sql, (error, results, fields) => {
         if(error){
