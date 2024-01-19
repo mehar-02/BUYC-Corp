@@ -19,11 +19,11 @@ const port = 5000;
 // }));
 app.use(cors("*"));
 var connection = mysql.createConnection({
-    host: 'viaduct.proxy.rlwy.net',
+    host: 'monorail.proxy.rlwy.net',
     user: 'root',
-    password: 'dDGC2c31d1H1gc3c6H3FCfgDdaGBb36g',
+    password: 'dG2C33aDAa4hh1BHc-G51ddfBFeG34ec',
     database: 'railway',
-    port:'26960'
+    port:'51944'
 });
 
 connection.connect(function(error){
